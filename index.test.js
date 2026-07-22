@@ -4,6 +4,22 @@ const path = require('path');
 const os = require('os');
 const { main, getInput, setOutput, loadEvent, listComments, createComment, updateComment } = require('./index');
 
+let envBackup = {};
+
+beforeEach(() => {
+  envBackup = {};
+  Object.keys(process.env).forEach((key) => {
+    if (/^(GITHUB|INPUT_)/.test(key)) {
+      envBackup[key] = process.env[key];
+      delete process.env[key];
+    }
+  });
+});
+
+afterEach(() => {
+  Object.assign(process.env, envBackup);
+});
+
 function mockResponse(status, body) {
   return {
     ok: status >= 200 && status < 300,

@@ -1,0 +1,25 @@
+action.yml
+  s_04d9c1bf9ad3d6::t_a5d260868f49d6 1-24
+index.js
+  s_04d9c1bf9ad3d6::t_ab9f40442a1364 1-2,4-9,13-16,31,38,41,59-68,74,89,103
+  s_04d9c1bf9ad3d6::t_719554f8c4b052 3,10-12,17-30,32-37,39-40,42-58,69-73,75-88,90-102,104-119
+README.md
+  s_04d9c1bf9ad3d6::t_62463b04cb4454 1-18,34-43
+  s_04d9c1bf9ad3d6::t_fee4139b2819d6 19-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "1ffde21e0e3e8e22a1478efef786350898d507cb",
+  "prompts": {},
+  "sessions": {
+    "s_04d9c1bf9ad3d6": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_075004cb2ffepDU5FYPrt3w2hY",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}

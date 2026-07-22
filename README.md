@@ -4,15 +4,52 @@ Create a new pull request comment, or update an existing one identified by a uni
 
 ## Usage
 
+It is intended to run on `pull_request` events.
+
 ```yaml
-- name: Post PR comment
-  uses: saitho/gitea-action-pr-comment@v1
-  if: gitea.event_name == 'pull_request'
-  with:
-    identifier: coverage-report
-    body: |
-      ## Coverage report
-      Current coverage: **80 %**
+jobs:
+  comment:
+    - name: Post PR comment
+      uses: saitho/gitea-action-pr-comment@v1
+      if: gitea.event_name == 'pull_request'
+      env:
+        GITHUB_TOKEN: "${{ gitea.token }}"
+        GITHUB_EVENT_PATH: "${{ gitea.event_path }}"
+        GITHUB_API_URL: "${{ gitea.api_url }}"
+        GITHUB_REPOSITORY: "${{ gitea.repository }}"
+      with:
+        body: |
+          ## Coverage report
+          Current coverage: **80 %**
+        identifier: coverage-report
+```
+
+Example reading a generated markdown file:
+
+```yaml
+jobs:
+  coverage:
+    - name: Run Code coverage
+      run: echo 'Run your code coverage command here, generating code-coverage-results.md'
+    - name: Prepare comment body
+      if: gitea.event_name == 'pull_request'
+      id: comment
+      run: |
+        echo "body<<EOF" >> "$GITHUB_OUTPUT"
+        echo "# Coverage Report" >> "$GITHUB_OUTPUT"
+        echo "$(cat code-coverage-results.md)" >> "$GITHUB_OUTPUT"
+        echo "EOF" >> "$GITHUB_OUTPUT"
+    - name: Post PR comment
+      uses: saitho/gitea-action-pr-comment@v1
+      if: gitea.event_name == 'pull_request'
+      env:
+        GITHUB_TOKEN: "${{ gitea.token }}"
+        GITHUB_EVENT_PATH: "${{ gitea.event_path }}"
+        GITHUB_API_URL: "${{ gitea.api_url }}"
+        GITHUB_REPOSITORY: "${{ gitea.repository }}"
+      with:
+        body: ${{ steps.comment.outputs.body }}
+        identifier: coverage-report
 ```
 
 ## Inputs
@@ -21,17 +58,6 @@ Create a new pull request comment, or update an existing one identified by a uni
 |--------------|----------|---------------------------------------------------------------------------------------|
 | `body`       | yes      | Markdown body.                                                                        |
 | `identifier` | no       | Unique string to identify a comment for updates. Omit to always create a new comment. |
-
-## Context values
-
-The action reads the Gitea context from the runner environment:
-
-- `gitea.api_url` → `GITHUB_API_URL`
-- `gitea.token` → `GITHUB_TOKEN`
-- `gitea.repository` → `GITHUB_REPOSITORY`
-- `gitea.event.pull_request.number` → `GITHUB_EVENT_PATH`
-
-It is intended to run on `pull_request` events.
 
 ## Outputs
 

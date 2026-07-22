@@ -1,0 +1,36 @@
+package.json
+  s_0d114db7ef6995::t_bb43e7f2ab8d54 1-6,8-12,25-29
+  s_0d114db7ef6995::t_a6f77cccba3afb 7,13-14,16-21,23
+  s_0d114db7ef6995::t_8f5bdcaacc4ffe 15
+  s_0d114db7ef6995::t_5eefdc5c42476c 22
+  s_0d114db7ef6995::t_ba536f3ced618e 24
+index.test.js
+  s_0d114db7ef6995::t_5ec4421a47ba49 69,76,84,94,102,112,120,130,158-159,171,174,184,187
+  s_0d114db7ef6995::t_3480ba870d2d95 85,89
+  s_0d114db7ef6995::t_bd09e0311fd95a 2-68,70-75,77-83,86-88,90-93,95-101,103-111,113-119,121-129,131-157,160-170,172-173,175-183,185-186,188-214
+  s_0d114db7ef6995::t_3cefd87d3c3d7a 1
+LICENSE
+  s_0d114db7ef6995::t_93f738ad1542ef 1-21
+index.js
+  s_0d114db7ef6995::t_8d6e33365a6c72 3-7,10-11,31,38,41,45,48,50,53-55,60,69,73,86,88,100,102,114-121
+.gitea/workflows/ci.yml
+  s_0d114db7ef6995::t_7bf346b81d57ad 1-19
+package-lock.json
+  s_0d114db7ef6995::t_dda593656403f7 1-4417
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "41a6e3d37953b7347b4a3151ff78293519e7fc97",
+  "prompts": {},
+  "sessions": {
+    "s_0d114db7ef6995": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_074fc36e8ffewlKiSLhHn21pn9",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}

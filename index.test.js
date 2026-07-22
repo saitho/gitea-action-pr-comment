@@ -203,9 +203,12 @@ describe('main', () => {
     await expect(main({ ...env, GITHUB_REPOSITORY: '' })).rejects.toThrow('GITHUB_REPOSITORY is not set');
   });
 
-  it('throws when not pull_request event', async () => {
+  it('skips when not pull_request event', async () => {
     fs.writeFileSync(eventFile, JSON.stringify({}));
-    await expect(main(env)).rejects.toThrow('This action only runs on pull_request events');
+    const log = jestGlobal.spyOn(console, 'log').mockImplementation(() => {});
+    await main(env, jestGlobal.fn());
+    expect(log).toHaveBeenCalledWith('Not a pull_request event. Skipping.');
+    log.mockRestore();
   });
 
   it('throws when body missing', async () => {

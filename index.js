@@ -13,8 +13,11 @@ async function main(env = process.env, fetcher = globalThis.fetch) {
   if (!apiUrl) throw new Error('GITHUB_API_URL is not set');
   if (!token) throw new Error('GITHUB_TOKEN is not set');
   if (!owner || !repo) throw new Error('GITHUB_REPOSITORY is not set');
-  if (!prIndex) throw new Error('This action only runs on pull_request events');
   if (!body) throw new Error('Input body is required');
+  if (!prIndex) {
+    console.log('Not a pull_request event. Skipping.');
+    return;
+  }
 
   const marker = identifier ? `<!-- pr-comment-action:${identifier} -->` : null;
   const bodyWithMarker = marker ? `${body}\n\n${marker}` : body;

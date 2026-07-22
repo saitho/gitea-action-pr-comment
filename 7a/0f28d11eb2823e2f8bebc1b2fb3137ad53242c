@@ -1,0 +1,19 @@
+index.test.js
+  s_30b4c1bc04237b::t_cfec9abb98e654 7-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7a0f28d11eb2823e2f8bebc1b2fb3137ad53242c",
+  "prompts": {},
+  "sessions": {
+    "s_30b4c1bc04237b": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_074d91fe1ffee2sq7RfsklBOoM",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+index.test.js
+  s_683d14dca39f5a::t_d62fce50174f86 206-207
+  s_30b4c1bc04237b::t_3c096eab4d1ce4 146
+  s_30b4c1bc04237b::t_c96c4535cbb545 145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f531f099bc7a29e313cd9e986425f1c92cba7fd6",
+  "prompts": {},
+  "sessions": {
+    "s_30b4c1bc04237b": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_074d91fe1ffee2sq7RfsklBOoM",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    },
+    "s_683d14dca39f5a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_074f2d66bffe4t7mdkkxYPt3Wa",
+        "model": "kimi-k2.7-code"
+      },
+      "human_author": "Mario Lubenka <me@saitho.me>"
+    }
+  }
+}

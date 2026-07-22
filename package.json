@@ -1,0 +1,29 @@
+{
+  "name": "action-pr-comment",
+  "version": "1.0.0",
+  "description": "Create a new pull request comment, or update an existing one identified by a unique marker.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.saitho.me:gitea/action-pr-comment.git"
+  },
+  "keywords": [
+    "gitea",
+    "gitea-actions",
+    "pull-request",
+    "comment"
+  ],
+  "author": "Mario Lubenka <me@saitho.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saitho/gitea-action-pr-comment/issues"
+  },
+  "homepage": "https://github.com/saitho/gitea-action-pr-comment",
+  "devDependencies": {
+    "@jest/globals": "^30.4.1",
+    "jest": "^30.4.2"
+  }
+}

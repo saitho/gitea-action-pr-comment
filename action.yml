@@ -1,0 +1,24 @@
+name: 'Gitea Pull Request Comment'
+description: 'Create a new pull request comment or update an existing one identified by a unique marker.'
+branding:
+  icon: 'message-square'
+  color: 'green'
+
+inputs:
+  identifier:
+    description: >-
+      Unique identifier used to find an existing comment for updates.
+      If omitted, a new comment is created every run.
+    required: false
+    default: ''
+  body:
+    description: 'Comment body in Markdown.'
+    required: true
+
+outputs:
+  comment-id:
+    description: 'ID of the created or updated comment'
+
+runs:
+  using: 'node20'
+  main: 'index.js'

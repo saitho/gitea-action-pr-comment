@@ -6,7 +6,7 @@ Create a new pull request comment, or update an existing one identified by a uni
 
 ```yaml
 - name: Post PR comment
-  uses: saitho/action-pr-comment@v1
+  uses: saitho/gitea-action-pr-comment@v1
   if: gitea.event_name == 'pull_request'
   with:
     identifier: coverage-report
